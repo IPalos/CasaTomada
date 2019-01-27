@@ -11,7 +11,7 @@ public bool isCorrect = true;
 	// Use this for initialization
 	void Start () {
 		growthRate = 0.3f;
-		transform.position = new Vector3(1.32f,0,-9.1f);
+		transform.position = new Vector3(9.23f,1.18f,-11.41f);
 
 
 	}

@@ -65,7 +65,7 @@ private bool flag2 = true;
 			Debug.Log("Peluche esta en su lugar");
 			flag1=false;
 			olvido.transform.position=new Vector3(-6.68f,-0.83f,2.72f);
-			collar.transform.position = new Vector3(0,0,0);
+			collar.transform.position = new Vector3(0,1,0);
 
 		}
 	}

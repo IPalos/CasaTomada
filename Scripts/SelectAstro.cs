@@ -52,6 +52,7 @@ public class SelectAstro : MonoBehaviour {
 
   void letGo(){
     isHolding = false;
+    item.GetComponent<Rigidbody>().useGravity = true;
   }
 
   float getDistance(){
