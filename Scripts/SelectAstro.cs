@@ -65,29 +65,26 @@ public class SelectAstro : MonoBehaviour {
 
   bool pointRay(){
 
-      Ray ray = cam.ScreenPointToRay(new Vector3(cam.pixelWidth/2, cam.pixelHeight/2, 0));
 
-    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask ) && isHolding==false)
-    {
-      item =hit.collider.gameObject;
-      Debug.DrawRay(ray.origin, ray.direction * 50, Color.yellow);
-      Debug.Log(item.tag);
-      if (item.tag=="Carriable" && getDistance()<=3){
-        return true;
+      if (Physics.Raycast(transform.position + new Vector3(0f,.3f, 0f), transform.TransformDirection(Vector3.forward)*2, out hit, Mathf.Infinity, layerMask)){
+        Debug.DrawRay(transform.position+ new Vector3(0f,.3f,0f), transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+        item =hit.collider.gameObject;
+        Debug.Log(item.tag);
+        if (item.tag=="Carriable" && getDistance()<=3){
+          return true;
+        }
+        else if (item.tag =="Astro"){
+          return true;
+        }
+        else{
+          return false;
+        }
       }
-      else if (item.tag =="Astro"){
-        return true;
-      }
-      else{
-        return false;
-      }
-    }
 
     else{
-      Debug.DrawRay(ray.origin, ray.direction*50, Color.red);
+      Debug.DrawRay(transform.position+new Vector3(0f,.3f,0f), transform.TransformDirection(Vector3.forward) * 1000, Color.white);
       return false;
     }
-
   }
 
   void hold(){
@@ -98,7 +95,7 @@ public class SelectAstro : MonoBehaviour {
       item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
       item.transform.SetParent(tempParent.transform);
       if (item.tag=="Carriable"){
-        item.transform.position=tempParent.transform.position+(tempParent.transform.forward*3);
+        item.transform.position=tempParent.transform.position+(tempParent.transform.forward);
       }
       else if (item.tag == "Astro"){
         item.transform.position=tempParent.transform.position+(tempParent.transform.forward*getDistance());

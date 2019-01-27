@@ -14,7 +14,7 @@ public class CheckTriggerName : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		playerCam = GameObject.Find("MainCamera");
+		// playerCam = GameObject.Find("MainCamera");
 		astro = playerCam.GetComponent<SelectAstro>();
 
 		// puerta= GameObject.Find("Puerta");
@@ -38,8 +38,9 @@ public class CheckTriggerName : MonoBehaviour {
 	void OnTriggerStay(Collider other){
 		if (other.name.Contains(gameObject.name)){
 			// rb.isKinematic = false;
-			isInPosition = true;
+
 			if (astro.isHolding == false){
+				isInPosition = true;
 				gameObject.transform.position = other.transform.position;
 			}
 

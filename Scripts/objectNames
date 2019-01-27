@@ -1,23 +1,6 @@
 peluche
 collar
-mandil
-sweater
 cajamusical
-pelota
-pescadito
-cinturon
-dibujo
-trofeo
-jmesa
-flauta
-anillo
-cama
-yeso
-plato
-portafolio
-pastillas
-silla
-cuadro
 
 
 CUARTOS
@@ -30,3 +13,19 @@ patio
 baño
 sala
 default
+
+
+Estructura Juego
+Main menu
+  Instrucciones
+  New Game
+  Credits
+
+Instrucciones
+  regresar
+
+New Game
+  EndGame
+
+Credits
+  regresar
